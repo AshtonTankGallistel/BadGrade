@@ -1,0 +1,547 @@
+{
+    "Title": "Bad Grade",
+    "Credits": "StoryGraphTool created by Adam Smith (amsmith@ucsc.edu), game created by Ashton Gallistel (ajgallis@ucsc.edu).",
+    "InitialLocation": "Intro",
+    "Locations": {
+        "Intro": {
+            "Body": "After a particular hard test, followed by a very nervewracking wait, you have just recieved your grade. Your test, the culmination of your hard, 5th-grade level work, has been marked with an astounding red F. In no way can you let your parents find out; you must find a way to hide it from them, via any means possible.",
+            "Choices": [
+                {
+                    "Text": "Begin",
+                    "Target": "Classroom"
+                }
+            ]
+        },
+        "Classroom": {
+            "Body": "Your classroom is filled with the sounds of fellow students discussing the results of their labour. The smart kid's test is obviously the one with the best grade, with a 99%. They are currently in the midst of a intense debate with our rather tired teacher over the question that lost them that 1%. As such, you could maybe try to grab one of the teacher's pens from their table. Alternatively, you could maybe sneak out, but you probably can't go to far without getting in trouble. Eventually, however, you should head back home.",
+            "BodyFire": "The talk of tests has been replaced with rumors about a fire starting in another room. The teacher and the smart kid (who's machine you've just set ablaze) have move to the phone, trying to contact another teacher about the potential fire in the nearby room, as they are unable to leave the classroom without adult supervision. Assuming you haven't taken too many already, you could try to take more pens, or you could head back home before they realize you started that fire.",
+            "Choices": [
+                {
+                    "Text": "Grab a pen",
+                    "Target": "Grab a pen"
+                },
+                {
+                    "Text": "Sneak to the Science Classroom",
+                    "Target": "Science Classroom"
+                },
+		{
+                    "Text": "Steal the smart kid's test",
+                    "Target": "Attempt Theft"
+                },
+                {
+                    "Text": "Go home",
+                    "Target": "Bus"
+                }
+
+            ]
+        },
+        "Grab a pen": {
+            "Body": "There's quite a few pens here, but you don't think you can grab them all. If you grab too many, the teacher will probably catch onto what you're doing. You can probably take 3 at most.",
+            "ChoicesPen": [
+                {
+                    "Text": "Red",
+                    "Target": "Classroom",
+        		    "isPen": "true"
+                },
+                {
+                    "Text": "Blue",
+                    "Target": "Classroom",
+		            "isPen": "true"
+                },
+                {
+                    "Text": "Green",
+                    "Target": "Classroom",
+        		    "isPen": "true"
+                },
+                {
+                    "Text": "Yellow",
+                    "Target": "Classroom",
+		            "isPen": "true"
+                },
+                {
+                    "Text": "Black",
+                    "Target": "Classroom",
+		            "isPen": "true"
+                },
+                {
+                    "Text": "White",
+                    "Target": "Classroom",
+        		    "isPen": "true"
+                }
+            ],
+            "Body2": "You've grabbed too many pens already; any more and the teacher could catch you! You're familiar with this kind of thing, and would rather not be caught again.",
+            "Choices": [
+                {
+                    "Text": "Return to your desk",
+                    "Target": "Classroom"
+                }
+            ]
+
+        },
+        "Attempt Theft": {
+            "Body": "There's no way you could grab the test right now; The teacher and the smart kid are both focused almost entirely on the test, and would need to be completely distracted in order for you to take it.",
+            "Choices": [
+                {
+                    "Text": "Return to your desk",
+                    "Target": "Classroom"
+                }
+            ],
+            "BodyFire": "The teacher and smart kid are both distracted by the fire (which you caused), leaving the test open for the taking!",
+            "ChoicesFire": [
+		        {
+                    "Text": "Steal the test",
+                    "Target": "Steal that test"
+		        },
+                {
+                    "Text": "Return to your desk",
+                    "Target": "Classroom"
+                }
+            ]
+
+        },
+        "Steal that test":{
+            "Body": "You grab the test! You leave your old test in it's place, in order to draw less suspicion.",
+            "TestStatus": "stolen Test",
+            "Choices": [
+                {
+                    "Text": "Return to your desk",
+                    "Target": "Classroom"
+                }
+            ]
+        },
+        "Science Classroom": {
+            "Body": "The science classroom, which is right next door to your current class, is completely empty. The smart kid spends quite a lot of time in here, and one of their projects, a big metal machine, is in the center of the room.",
+            "Choices": [
+                {
+                    "Text": "Check out the machine",
+                    "Target": "Machine"
+                },
+                {
+                    "Text": "Return to your classroom",
+                    "Target": "Classroom"
+                }
+            ]
+        },
+        "Machine": {
+            "Body": "The machine is a metal structure with a dark screen near the center of its mass. There is also a flat surface with a round hole next to said screen, with a circumference slightly bigger then a pen. You could probably drop a pen in, if you'd like.",
+            "BodyFire": "The machine has begun smoking, and may soon burst into flames. You should probably leave immediately.",
+            "Display": "Currently, the screen displays the word 'DOG'.",
+            "Display1": "Currently, the screen displays the word 'THIEF'.",
+            "Display2": "Currently, the screen displays the word 'MODIFY'.",
+            "Choices": [
+                {
+                    "Text": "Don't insert anything",
+                    "Target": "Science Classroom"
+                }
+            ],
+            "PenChoice1": {
+		        "Text": "This text shouldn't be displaying!",
+		        "Target": "Machine",
+		        "PenColor": "null",
+                "PenInsertedRight": "You drop in the pen. You hear a whirring sound, followed by a positive 'ding!', in time with the screen's display changing.",
+                "PenInsertedWrong": "You drop in the pen. You hear a whirring sound, which quickly gets harsher and is followed by several loud clangs. Smoke begins raising from the machine, and you think you hear a small fire start inside.",
+                "PenInsertedDoom": "Despite your better judgement, you drop in another pen. The clanging sound begins again, getting louder and louder before-<br>",
+                "TargetDoom": "Explosion ending",
+                "TargetWin": "IOU 1 ending"
+            
+            },
+            "PenChoice2": {
+		        "Text": "This text shouldn't be displaying!",
+		        "Target": "Machine",
+		        "PenColor": "null",
+                "PenInsertedRight": "You drop in the pen. You hear a whirring sound, followed by a positive 'ding!', in time with the screen's display changing.",
+                "PenInsertedWrong": "You drop in the pen. You hear a whirring sound, which quickly gets harsher and is followed by several loud clangs. Smoke begins raising from the machine, and you think you hear a small fire start inside.",
+                "PenInsertedDoom": "Despite your better judgement, you drop in another pen. The clanging sound begins again, getting louder and louder before-<br>",
+                "TargetDoom": "Explosion ending",
+                "TargetWin": "IOU 1 ending"
+            },
+            "PenChoice3": {
+		        "Text": "This text shouldn't be displaying!",
+		        "Target": "Machine",
+		        "PenColor": "null",
+                "PenInsertedRight": "You drop in the pen. You hear a whirring sound, followed by a positive 'ding!', in time with the screen's display changing.",
+                "PenInsertedWrong": "You drop in the pen. You hear a whirring sound, which quickly gets harsher and is followed by several loud clangs. Smoke begins raising from the machine, and you think you hear a small fire start inside.",
+                "PenInsertedDoom": "Despite your better judgement, you drop in another pen. The clanging sound begins again, getting louder and louder before-<br>",
+                "TargetDoom": "Explosion ending",
+                "TargetWin": "IOU 1 ending"
+            }
+        },
+        "Explosion ending":{
+            "Body": "BOOOM.<br>The loudest sound ever heard blasts into and threw your eardrums, as the machine bursts into a glorious, neverending explosion. In mere minutes, the entire world is engulfed in flames, before cracking in two under the pressure of the machine. By the end of the hour, Earth is no more.<br><br>Good news is, there's no way your parents will find out about your quiz score now!",
+            "Choices": [
+                {
+                    "Text": "Nice!",
+                    "Target": "Explosion ending2"
+                }
+            ]
+        },
+        "Explosion ending2": {
+            "Body": "<br><br>KABOOM ENDING<br><br><]-RED-[>",
+            "Choices": [
+                {
+                    "Text": "Return to the start",
+                    "Target": "Intro"
+                }
+            ]
+        },
+        "IOU 1 ending":{
+            "Body": "As you insert the final pen, the machine begins to let out a series of dings, getting faster and faster until they form a single continuous sound. The machine's outer metal plating begins clanking, and light shines through the edges seperating each plate. As the dinging reaches a climax, and the room becomes near coated in light, your vision starts to blur. Right when your vision is near covered in nothing but light...<br>'ding!' The machine suddenly stops, the light quickly fading, and the plating settling back into position.<br>You feel a piece of paper in your hands.",
+            "Choices":[
+                {
+                    "Text": "Read it.",
+                    "Target": "IOU 1 ending2"
+                }
+            ]
+        },
+        "IOU 1 ending2":{
+            "Body": "'IOU 1 true ending'",
+            "Choices":[
+                {
+                    "Text": "Fantastic.",
+                    "Target": "Game Over"
+                }
+            ]
+        },
+        "Bus": {
+            "Body": "As the schoolday was ending shortly after you recieved the tests, you merely wait for the final bell before heading to the bus.",
+            "BodyFire": "You make the decision to head to the bus a touch early, hoping to avoid being caught for the fire about to engulf the science classroom.",
+            "Choices": [
+                {
+                    "Text": "Ride home",
+                    "Target": "Home"
+                }
+            ]
+        },
+        "Home": {
+            "Body": "The warm colors of the walls welcome you back home. Your parents will be back soon, but you have a bit of time to prepare as you like before they arrive.",
+            "Choices": [
+                {
+                    "Text": "Check on your dog",
+                    "Target": "Dog"
+                },
+                {
+                    "Text": "Edit Test",
+                    "Target": "Editorial",
+                    "Requirement": "your Test"
+                },
+                {
+                    "Text": "Wait for parents",
+                    "Target": "Parents"
+                }
+            ] 
+        },
+        "Dog":{
+            "Body": "Your family dog wags her tail as you approach, clearly happy to see you. Makes sense, as you commonly feed her whenever you get home.",
+            "Choices": [
+                {
+                    "Text": "Pet the dog",
+                    "Target": "Pet the dog"
+                },
+                {
+                    "Text": "Feed her some dog food",
+                    "Target": "Dog Food"
+                },
+                {
+                    "Text": "Feed her your test",
+                    "Target": "Dog ate your test",
+                    "Requirement": "your Test"
+                },
+                {
+                    "Text": "Feed her a pen",
+                    "Target": "Future punch",
+                    "Requirement": "pen"
+                },
+                {
+                    "Text": "Leave the dog alone for now",
+                    "Target": "Home"
+                }
+            ]
+        },
+        "Pet the dog":{
+            "Body": "You pet the dog. This game can now be posted to that one twitter account.",
+            "Choices": [
+                {
+                    "Text": "This is too meta. Head back.",
+                    "Target": "Dog"
+                }
+            ]
+        },
+        "Dog Food":{
+            "BodyFull": "She's already had a bowl! Any more and your parents will get upset with you for spoiling her again.",
+            "Body": "You pour a big bowl of food for her, and she instantly starts eating.",
+            "Choices": [
+                {
+                    "Text": "Good girl!",
+                    "Target": "Home"
+                }
+            ]
+        },
+        "Dog ate your test":{
+            "Body": "She's always had an apetite for papers she wasn't supposed to eat, intentionally fed or not. She tears the paper from your hands the second it's remotely in range, and begins to tear it to shreds.",
+            "TestStatus": "no Test",
+            "Choices": [
+                {
+                    "Text": "Good girl!",
+                    "Target": "Home"
+                }
+            ]
+        },
+        "Future punch":{
+            "Body": "You begin to pull out the pen, before suddenly you hear a weird sound behind you. As you turned around, you are suddenly punched in the face! Before you can get a good look at who did it, you hear the soudn again, and they're gone.<br>You deserved that, honestly. Probably would've given the poor girl indigestion issues, if not outright ink poisoning or somehing. What were you thinking?",
+            "Morality": "bad",
+            "Choices": [
+                {
+                    "Text": "Sorry, girl",
+                    "Target": "Home"
+                }
+            ]
+        },
+        "Editorial":{
+            "BodyPenless": "You would like to edit your test, but you have no pens to edit it with!",
+            "Body": "The only pen you have at home is a weird, blue-ish purple color, but you can use any other pens you may have grabbed to edit as well. Your test is currently black and white, with red markings showcasing your various errors and, more importantly, your final grade.",
+            "Choices": [
+                {
+                    "Text": "Edit test?",
+                    "Target": "Forgery fail",
+                    "Requirement": "Incorrect pens"
+                },
+                {
+                    "Text": "Edit test",
+                    "Target": "Forgery Success",
+                    "Requirement": "Correct pens"
+                },
+                {
+                    "Text": "Leave your test unedited",
+                    "Target": "Home"
+                }
+            ]
+        },
+        "Forgery fail": {
+            "Body": "Your current selection of pens is... less than ideal for this task. Hopefully the parents won't question some odd choices.",
+            "BodyRedY": "You use the red pen to add far better grade, in the form of an A+.",
+            "BodyRedN": "You lack a red pen, so you use another color to represent your grade.",
+            "BodyWhiteY": "You use the white pen to cover up the previous grade and markings.",
+            "BodyWhiteN": "You lack a white pen, so you use another color to try and cover up the previous markings.",
+            "BodyBlackY": "Said previous markings overlapped with the text, so you use the black pen to further hide them.",
+            "BodyBlackN": "Said previous markings overlapped with the black text, but you lack a black pen, so you just use the closest color you have.",
+            "TestStatus": "badly edited Test",
+            "Choices": [
+                {
+                    "Text": "Success?",
+                    "Target": "Home"
+                }
+            ]
+        },
+        "Forgery Success": {
+            "Body": "Your current selection of pens is perfect for this task.<br>You use the red pen to add far better grade, in the form of an A+.<br>You use the white pen to cover up the previous grade and markings.<br>Said previous markings overlapped with the text, so you use the black pen to further hide them.",
+            "TestStatus": "well edited Test",
+            "Choices": [
+                {
+                    "Text": "Success!",
+                    "Target": "Home"
+                }
+            ]
+        },
+        "Parents": {
+            "Body": "The moment you've dreaded has arrived. Your parents are home. They are asking about how your test went, and by now, there's only one possible answer you can give them.",
+            "Choices": [
+                {
+                    "Text": "Show them your test.",
+                    "Target": "Default ending",
+                    "Requirement": "your Test"
+                },
+                {
+                    "Text": "Show them the edited test.",
+                    "Target": "Forgery ending",
+                    "Requirement": "badly edited Test"
+                },
+                {
+                    "Text": "Show them the edited test.",
+                    "Target": "Modified ending",
+                    "Requirement": "well edited Test"
+                },
+                {
+                    "Text": "Show them the stolen test.",
+                    "Target": "Theft ending",
+                    "Requirement": "stolen Test"
+                },
+                {
+                    "Text": "Tell them your dog ate your test.",
+                    "Target": "Dog ending",
+                    "Requirement": "no Test"
+                }
+            ]
+        },
+        "Default ending": {
+            "Body": "It seems your day of wreckening has come. Incapable of finding any reasonable method of preventing it, you reveal your test to your parents. You only hope your death will be swift and pai-<br>'Ah, it's alright kid.'",
+            "Choices": [
+                {
+                    "Text": "what",
+                    "Target": "Default ending2"
+                }
+            ]
+        },
+        "Default ending2": {
+            "Body": "'Hey, it happens to the best of us,' your other parent chimes in. 'I nearly failed quite a few classes due to bombing my quizzes back in the day.'",
+            "Choices": [
+                {
+                    "Text": "...",
+                    "Target": "Default ending3"
+                }
+            ]
+        },
+        "Default ending3": {
+            "Body": "'What's important is that you tried. We saw how hard you studied for it, that's enough.'",
+            "Choices": [
+                {
+                    "Text": "...",
+                    "Target": "Default ending4"
+                }
+            ]
+        },
+        "Default ending4": {
+            "Body": "<br><br>GOOD ENDING??!?<br><br><]-PINK-[>",
+            "Choices": [
+                {
+                    "Text": "Return to the start",
+                    "Target": "Intro"
+                }
+            ]
+        },
+        "Forgery ending": {
+            "Body": "What a brilliant scheme. Via utilizing your outstanding editing skills, you have comlpetely hidden any and all traces that you ever got a bad grade!<br>'...Why did you draw all over your test?'",
+            "Choices":[
+                {
+                    "Text": "...Oh godamnit.",
+                    "Target": "Forgery ending2"
+                }
+            ]
+        },
+        "Forgery ending2": {
+            "Body": "<br><br>FORGERY ENDING<br><br><]-GRAY-[>",
+            "Choices": [
+                {
+                    "Text": "Return to the start",
+                    "Target": "Intro"
+                }
+            ]
+        },
+        "Modified ending": {
+            "Body": "What a brilliant scheme. Via utilizing your outstanding editing skills, you have comlpetely hidden any and all traces that you ever got a bad grade!<br>'Oh my, congratulations!'",
+            "Choices":[
+                {
+                    "Text": "...it actually worked?.",
+                    "Target": "Modified ending2"
+                }
+            ]
+        },
+        "Modified ending2": {
+            "Body": "'Oh, I'm so happy for you!' your other parent chimes in. 'Your hard work finally paid off! We should go somewhere to celebrate!'",
+            "Choices":[
+                {
+                    "Text": "No, no, that's really not necessar-",
+                    "Target": "Modified ending3"
+                }
+            ]
+        },
+        "Modified ending3": {
+            "Body": "Before you can finish, your parents have already got you in the car to head to the nearest ice cream place to celebrate. The place is alive with music and cheers as your parents encourage you to get the biggest sunday you can physically eat.",
+            "Choices":[
+                {
+                    "Text": "The guilt of all this will probably eat you alive first, though.",
+                    "Target": "Modified ending4"
+                }
+            ]
+        },
+        "Modified ending4": {
+            "Body": "<br><br>MODIFIED ENDING<br><br><]-BLUE-[>",
+            "Choices": [
+                {
+                    "Text": "Return to the start",
+                    "Target": "Intro"
+                }
+            ]
+        },
+        "Theft ending": {
+            "Body": "You show them the pilfered quiz. This plan is foolproof; why bother doing well on your own tests when you can just steal good results from someone else?<br>'Why does this have someone else's name on it?'",
+            "Choices":[
+                {
+                    "Text": "...Whoops.",
+                    "Target": "Theft ending2"
+                }
+            ]
+        },
+        "Theft ending2": {
+            "Body": "<br><br>THEFT ENDING<br><br><]-YELLOW-[>",
+            "Choices": [
+                {
+                    "Text": "Return to the start",
+                    "Target": "Intro"
+                }
+            ]
+        },
+        "Dog ending":{
+            "Body": "'...Our dog ate your test.'",
+            "Choices": [
+                {
+                    "Text": "Yes.",
+                    "Target": "Dog ending2"
+                }
+            ]
+        },
+        "Dog ending2":{
+            "Body": "'The dog that you commonly give your homework so that you don't have to do it.'",
+            "Choices": [
+                {
+                    "Text": "...Yes.",
+                    "Target": "Dog ending3"
+                }
+            ]
+        },
+        "Dog ending3":{
+            "Body": "'The dog we specifically told you to not only not feed your homework to, but to make sure you keep your schoolwork as far away from as possible.'",
+            "Choices": [
+                {
+                    "Text": "...Yes, that one.",
+                    "Target": "Dog ending4"
+                }
+            ]
+        },
+        "Dog ending4":{
+            "Body": "'May I ask, how did the dog manage to get your test?'",
+            "Choices": [
+                {
+                    "Text": "...They uh... asked really nicely for it?",
+                    "Target": "Dog ending5"
+                }
+            ]
+        },
+        "Dog ending5":{
+            "Body": "'...'",
+            "Choices": [
+                {
+                    "Text": "...",
+                    "Target": "Dog ending6"
+                }
+            ]
+        },
+        "Dog ending6":{
+            "Body": "'You're grounded.'",
+            "Choices": [
+                {
+                    "Text": "...",
+                    "Target": "Dog ending7"
+                }
+            ]
+        },
+        "Dog ending7":{
+            "Body": "<br><br>DOG ENDING<br><br><]-GREEN-[>",
+            "Choices": [
+                {
+                    "Text": "Return to the start",
+                    "Target": "Intro"
+                }
+            ]
+        }
+    }
+}
